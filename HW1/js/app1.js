@@ -1,5 +1,5 @@
 let num1_1 = parseInt(prompt('Введите первое число ( 0 < . . . )'));
-let num1_2 = parseInt(prompt('Введите второе число ( 0 < , . . . ,  <= 10 )'));
+let num1_2 = parseInt(prompt('Введите второе число ( 1 < . . . )'));
 
 function numeralSystem(n1, n2) {
   if(isNaN(n1) || isNaN(n2) || n1 < 0 || n2 < 1) {
