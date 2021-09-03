@@ -1,10 +1,10 @@
-let num2_1 = parseInt(prompt('Введите первое число'));
-if (!Number.isInteger(num2_1)) {
+let num2_1 = parseFloat(prompt('Введите первое число'));
+if (isNaN(num2_1)) {
   throw new Error("Некорректный ввод!");
 } 
 
-let num2_2 = parseInt(prompt('Введите второе число'));
-if (!Number.isInteger(num2_2)) {
+let num2_2 = parseFloat(prompt('Введите второе число'));
+if (isNaN(num2_2)) {
   throw new Error("Некорректный ввод!");
 } 
 
