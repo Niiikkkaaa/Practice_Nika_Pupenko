@@ -1,9 +1,5 @@
 Array.prototype.myFilter = function(callback, thisArr) {
-  let result = this.reduce(function(arr, item, index, itemArr) {
-    return (callback.call(thisArr, item, index, itemArr) ? [...arr, item] : arr);
-  }, [])
-  
-  return result;
+  return this.reduce ((arr, item, index, itemArr) => callback.call(thisArr, item, index, itemArr) ? [...arr, item] : arr , []);
 } 
 
 function createDebounceFunction(callback, ms) {
