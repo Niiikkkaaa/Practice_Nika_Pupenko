@@ -6,7 +6,7 @@ function createDebounceFunction(callback, ms) {
   let timeout;
 
   return function() {
-    const callFunction = function() {
+    const callFunction = function(...arguments) {
       callback.apply(this, arguments);
     }
 
@@ -14,3 +14,4 @@ function createDebounceFunction(callback, ms) {
     timeout = setTimeout(callFunction, ms);
   };
 }
+
