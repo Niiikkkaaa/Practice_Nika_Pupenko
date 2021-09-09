@@ -1,12 +1,8 @@
 Array.prototype.myFilter = function(callback, thisArr) {
-  let result = [];
-
-  this.forEach(function(item, index, itemArr) {
-    if (callback.call(thisArr, item, index, itemArr)) {
-      result.push(item);
-    }
-  })
-
+  let result = this.reduce(function(arr, item, index, itemArr) {
+    return (callback.call(thisArr, item, index, itemArr) ? [...arr, item] : arr);
+  }, [])
+  
   return result;
 } 
 
