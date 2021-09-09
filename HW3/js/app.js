@@ -1,15 +1,14 @@
 Array.prototype.myFilter = function(callback, thisArr) {
   let result = [];
 
-  for (let i = 0; i < this.length; i++) {
-    if (callback.call(thisArr, this[i], i, this)) {
-      result.push(this[i]);
+  this.forEach(function(item, index, itemArr) {
+    if (callback.call(thisArr, item, index, itemArr)) {
+      result.push(item);
     }
-  }
+  })
 
   return result;
 } 
-
 
 function createDebounceFunction(callback, ms) {
   let timeout;
