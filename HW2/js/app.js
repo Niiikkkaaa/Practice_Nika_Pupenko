@@ -33,11 +33,11 @@ function selectFromInterval(arr, n1, n2) {
     n2 = temp;
   }
 
-  for (let i = 0; i < arr.length; i++ ) {
-    if (arr[i] >= n1 && arr[i] <= n2) {
-      arr2.push(arr[i]);
+  arr2 = arr.filter(function(item) {
+    if(item >= n1 && item <= n2) {
+      return true;
     }
-  }
+  })
 
   return arr2;
 }
