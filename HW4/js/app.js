@@ -1,13 +1,19 @@
 function concatStrings(first, separator) {
-  return function(second) {
-    if (typeof(second) !== 'string') {
-      return first;
-    } else if (typeof(separator) !== 'string') {
-      return concatStrings(first + second);
-    } else {
-      return concatStrings(first + separator + second, separator);
+  let result = '';
+  result += first;
+
+  function returnNextString(second) {
+    if(typeof(second) !== 'string') {
+      return result;
     }
-  };
+    if (typeof(separator) !== 'string') {
+      result += second;
+    } else {
+      result += separator + second;
+    }
+    return returnNextString;
+  }
+  return returnNextString;
 }
 
 class Calculator {
